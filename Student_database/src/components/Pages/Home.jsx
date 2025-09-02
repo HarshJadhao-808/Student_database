@@ -2,28 +2,31 @@ import React, { useState } from "react";
 import "./home.css";
 
 const Home = () => {
-	const [arr, setarr] = useState([]);
+	const [arr, setarr] = useState(JSON.parse(localStorage.getItem("student_arr")) || []);
 	const [name, setname] = useState("");
 	const [course, setcourse] = useState("");
 	const [gmail, setgmail] = useState("");
 	const [mobile, setmobile] = useState("");
 	let form = document.getElementById("form");
 
+
+	
+
 	const fill_arr = (e) => {
 		e.preventDefault();
 		let info = {
+			key:Math.floor(Math.random() * 1000),
 			name,
 			course,
 			gmail,
 			mobile,
-		};
-		console.log(info.name);
-		console.log(info.course);
-		console.log(info.gmail);
-		console.log(info.mobile);
-		setarr([...arr, info]);
-		console.log(arr);
-		localStorage.setItem("student_arr", JSON.stringify(arr));
+		}; 
+		
+		setarr([...arr,info]);
+		console.log(info.key);
+		// console.log(arr);
+		let data =  localStorage.setItem("student_arr", JSON.stringify(arr));
+
 	};
 	return (
 		<div>
@@ -42,7 +45,9 @@ const Home = () => {
 					name=""
 					id="select"
 				>
+					<option value=" ">Choose your course</option>
 					<option value="Blockchain">Blockchain</option>
+					<option value="UI_UX">UI UX</option>
 					<option value="Fullstack">Fullstack</option>
 					<option value="Graphic_design">Graphic Design</option>
 				</select>
@@ -64,7 +69,7 @@ const Home = () => {
 				/>
 				<br />
 				<br />
-				<input type="Submit" />
+				<input id="submit" type="Submit" />
 			</form>
 		</div>
 	);

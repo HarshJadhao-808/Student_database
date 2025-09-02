@@ -40,3 +40,17 @@ form>input{
     padding: 5px;
     border-radius: 30px;
 }
+
+#delete_button {
+  background-color: #ff4d4d;  /* red */
+  color: white;              /* text color */
+  text-align: center;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease; /* smooth transition */
+}
+
+#delete_button:hover {
+  background-color: #f70707;  /* light red on hover */
+}

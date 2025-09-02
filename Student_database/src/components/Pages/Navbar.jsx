@@ -1,19 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import Allroutes from "../Allroutes";
-import "./home.css"
+import "./home.css";
 const Navbar = () => {
-
-
-
-
-
-  return (
+	return (
 		<>
 			<nav>
 				<ul>
 					<li>
-						<Link to="/"> 
+						<Link to="/">
 							<img
 								src="	https://www.skillonit.com/static/media/Skilonit_new_logo.a161fa932b5d02e8a3d4d06f1b7bef3f.svg"
 								alt=""
@@ -27,6 +22,6 @@ const Navbar = () => {
 			</nav>
 		</>
 	);
-}
+};
 
-export default Navbar
+export default Navbar;

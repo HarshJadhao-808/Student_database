@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from "react";
+import "./database.css";
 const Database = () => {
 	const [arr, setArr] = useState([]);
 
@@ -8,11 +9,20 @@ const Database = () => {
 		setArr(student_arr);
 	}, []); 
 
+
+	const delete_fun = (key) => {
+		setArr(arr.filter((el)=> el.key !== key ))
+		localStorage.setItem("student_arr", JSON.stringify(arr));
+		
+	};
+
+
+
 	console.log(arr);
 
 	return (
 		<>
-			<table>
+			<table >
 				<thead>
 					<tr>
 						<th>Students Name</th>
@@ -24,8 +34,15 @@ const Database = () => {
 				<tbody>
 					{arr.map((el) => {
 						return (
-							<tr key={el.name} >
+							<tr key={el.key}>
 								<td>{el.name}</td>
+								<td>{el.course}</td>
+								<td>{el.gmail}</td>
+								<td>{el.mobile}</td>
+								<td id="delete_button" onClick={()=>delete_fun(el.key)  }>Delete</td>
+								<td id="inquiry">Inquiry</td>
+								<td id="registration">Registration</td>
+								<td id="demo">Demo</td>
 							</tr>
 						);
 					})}
