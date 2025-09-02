@@ -2,15 +2,14 @@ import React, { useState } from "react";
 import "./home.css";
 
 const Home = () => {
-	const [arr, setarr] = useState(JSON.parse(localStorage.getItem("student_arr")) || []);
+
 	const [name, setname] = useState("");
 	const [course, setcourse] = useState("");
 	const [gmail, setgmail] = useState("");
 	const [mobile, setmobile] = useState("");
-	let form = document.getElementById("form");
 
 
-	
+	let arr = JSON.parse( localStorage.getItem("student_arr")) || [];
 
 	const fill_arr = (e) => {
 		e.preventDefault();
@@ -22,11 +21,10 @@ const Home = () => {
 			mobile,
 		}; 
 		
-		setarr([...arr,info]);
-		console.log(info.key);
-		// console.log(arr);
-		let data =  localStorage.setItem("student_arr", JSON.stringify(arr));
-
+		arr.push(info)
+		 localStorage.setItem("student_arr", JSON.stringify(arr));
+       alert("data submited")
+	   
 	};
 	return (
 		<div>

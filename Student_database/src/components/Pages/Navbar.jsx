@@ -17,6 +17,9 @@ const Navbar = () => {
 					</li>
 					<li>
 						<Link to="/database">student_database</Link>
+						<Link to="/ragister">Ragister</Link>
+						<Link to="/demo">Demo</Link>
+						<Link to="/inquiry">Inquiry</Link>
 					</li>
 				</ul>
 			</nav>
