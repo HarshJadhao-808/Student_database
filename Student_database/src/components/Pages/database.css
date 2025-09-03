@@ -5,3 +5,32 @@ table,th,td {
     margin: auto;
 	margin-top: 50px;
 }
+
+/* nav.css */
+.links {
+  display: flex;
+  justify-content: flex-end; /* keep links on the right side */
+  gap: 20px;
+  padding: 10px 20px;
+  background: #f7f8e9; /* match the page background */
+  border-bottom: 2px solid #e63946; /* red line like your page */
+}
+
+.links a {
+  color: #1e293b; /* dark text for contrast */
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.links a:hover {
+  background: #e63946; /* red hover to match delete button */
+  color: #fff;
+}
+
+.links a.active {
+  background: #1e293b; /* dark background */
+  color: #fff;
+}

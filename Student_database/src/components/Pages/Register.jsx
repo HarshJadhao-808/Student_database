@@ -1,20 +1,18 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useState } from 'react'
 
-const Inquiry = () => {
-	const [arr,setarr]=useState([])
+const Register = () => {
+	const[arr,setarr]=useState([])
+	let data = JSON.parse(localStorage.getItem("register_students")) || [];
 
-  let data=JSON.parse(localStorage.getItem("inquiry_students")) || []
+	const delete_fun = (key) => {
+		let updated = data.filter((el) => el.key !== key);
+		setarr(updated);
+		localStorage.setItem("register_students", JSON.stringify(updated));
+	};
 
-   const delete_fun = (key) => {
-	let updated = data.filter((el)=> el.key !== key)
-	setarr(updated)
-	localStorage.setItem("inquiry_students",JSON.stringify(updated));
-   }
-
-  return (
-    <div>
-      <table>
+	return (
+		<div>
+			<table>
 				<thead>
 					<tr>
 						<th>Students Name</th>
@@ -36,9 +34,9 @@ const Inquiry = () => {
 						</tr>
 					))}
 				</tbody>
-        </table>
-    </div>
-  )
+			</table>
+		</div>
+	);
 }
 
-export default Inquiry
+export default Register

@@ -15,9 +15,9 @@ const Navbar = () => {
 							/>
 						</Link>
 					</li>
-					<li>
+					<li className="links">
 						<Link to="/database">student_database</Link>
-						<Link to="/ragister">Ragister</Link>
+						<Link to="/register">Register</Link>
 						<Link to="/demo">Demo</Link>
 						<Link to="/inquiry">Inquiry</Link>
 					</li>
